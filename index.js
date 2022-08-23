@@ -27,5 +27,64 @@
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
    */
+const dog = {
+   species: 'dog',
+   name: 'Timmy',
+   gender: 'male',
+   legs: 4,
+   hands: 0,
+   saying: 'woof-woof!'
+   };
+   
+const cat = {
+   species: 'cat',
+   name: 'Mars',
+   gender: 'male',
+   legs: 4,
+   hands: 0,
+   saying: 'meow-meow!'
+   };
 
+const woman = {
+   species: 'woman',
+   name: 'Sarah',
+   gender: 'female',
+   legs: 2,
+   hands: 2,
+   saying: 'Hello, my name is Sarah!'
+   };
 
+const man = {
+   species: 'man',
+   name: 'Kevin',
+   gender: 'male',
+   legs: 2,
+   hands: 2,
+   saying: 'Hello, my name is Kevin'
+   };
+
+const catWoman = Object.create(cat);
+catWoman.name = 'Cat-woman';
+catWoman.species = 'human';
+catWoman.gender = 'female';
+catWoman.legs = 2;
+catWoman.hands = 2;
+
+const inhabitants = [dog, cat, woman, man, catWoman];
+
+const inhabitantPropertyNames = [
+   'species',
+   'name',
+   'gender',
+   'legs',
+   'hands',
+   'saying',
+ ];
+
+const inhabitantDetails = inhabitants.map((inhabitant) =>
+ inhabitantPropertyNames.map((propName) => inhabitant[propName])
+); 
+
+inhabitantDetails.forEach((inhabitant) =>
+  print(inhabitant.join('; '))
+);
